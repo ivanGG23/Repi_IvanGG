@@ -1,4 +1,3 @@
-// Elementos del DOM
 const audio = document.getElementById("audio");
 const playBtn = document.getElementById("play");
 const playIcon = playBtn.querySelector("i");
