@@ -1,47 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
-    <script type="module" src="./main.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reproductor Musical</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+
     <div class="container">
-        <div class="music-player">
-            <nav>
-                <div class="circle">
-                    <span>back</span>
-                </div>
-                <div class="circle">
-                    <span>bars</span>
-                </div>
-            </nav>
 
-            <div id="song-details">
-                <img src="./media/default_img.jpg" alt="" id="song-img">
-                <h1 id="title"></h1>
-                <h3 id="artist"></h3>
+        <div class="left-panel">
+
+            <img id="cover" src="506.jpeg" alt="Portada de la canción"
+                style="opacity: 1; transition: opacity 0.3s ease;" />
+
+            <div class="controls">
+                <button id="prev" title="Anterior"><i class="fas fa-backward"></i>
+</button>
+                <button id="play" title="Reproducir/Pausar"><i class="fa-solid fa-play"></i></button>
+                <button id="next" title="Siguiente"><i class="fas fa-forward"></i>
+</button>
             </div>
 
-            <div class="audio">
-                <audio controls id="media" hidden>
-                    <!--<source id="audio" src="" type="audio/mpeg">-->
-                </audio>
-                <input type="range" value="0" id="progress">
+            <div class="progress-bar">
+                <span id="current-time">0:00</span>
+                <input type="range" id="progress" value="0" min="0" max="100" />
+                <span id="duration">0:00</span>
             </div>
+        </div>
 
-            <div class="song-controls">
-                <span id="lastest">last</span>
-                <span id="play" class="play">play</span>
-                <span id="forward">forward</span>
-            </div>
-
+        <div class="right-panel">
+            <ul id="song-list">
+                <li data-src="506_MORAT.unknown" data-cover="506.jpeg">506</li>
+                <li data-src="song2.mp3" data-cover="cover2.jpg">Canción 2</li>
+                <li data-src="song3.mp3" data-cover="cover3.jpg">Canción 3</li>
+                <li data-src="song4.mp4" data-cover="cover4.jpg">Cancion 4</li>
+            </ul>
         </div>
     </div>
+
+    <audio id="audio" preload="metadata"></audio>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
