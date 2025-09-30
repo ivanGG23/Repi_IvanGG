@@ -64,7 +64,6 @@ body {
 .controls button:hover i {
     transform: scale(1.2);
     color: #1db954;
-    /* Verde tipo Spotify */
 }
 
 .progress-bar {
